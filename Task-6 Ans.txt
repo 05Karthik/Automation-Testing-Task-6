@@ -1,0 +1,45 @@
+Q-1.Write all Possible Locators in guvi.in register Url.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class GuviRegisterPageLocators {
+
+	public static void main(String[] args) throws InterruptedException {
+     // To Initialize the browser
+	WebDriverManager.chromedriver().setup();
+	WebDriver driver=new ChromeDriver();
+		
+     //To maximize and delete cookies
+	driver.manage().window().maximize();
+	driver.manage().deleteAllCookies();
+		
+    //Navigate to Web page
+	driver.get("https://www.guvi.in/register");		
+		
+    // Using ID locator
+        WebElement ElementbyID = driver.findElement(By.id("name"));
+        
+    // Using ClassName locator
+        WebElement ElementbyClassname = driver.findElement(By.xpath("//input[@type='email']"));  
+       
+    // Using TagName locator
+        WebElement Elementbytagname = driver.findElement(By.tagName("#password"));
+       
+    // Using CSS Selector locator
+        WebElement Elementbycssselector = driver.findElement(By.cssSelector("//a[@id='mobileNumber']"));
+        
+    // Using XPath locator
+        WebElement ElementbyXpath = driver.findElement(By.className("class=signup-btn"));
+       
+    // Close the WebDriver
+       driver.quit();	
+		
+
+	}
+
+}
